@@ -1,9 +1,11 @@
-# Official Jenkins Docker image
+# Add sudo privileges for apt-get to jenkins on official Jenkins Docker image
 
 The Jenkins Continuous Integration and Delivery server.
 
 This is a fully functional Jenkins server, based on the Long Term Support release
 http://jenkins-ci.org/
+You would to get image from Dockerhub
+https://hub.docker.com/r/zlid/jenkins-sudo/
 
 
 <img src="http://jenkins-ci.org/sites/default/files/jenkins_logo.png"/>
