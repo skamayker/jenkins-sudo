@@ -19,16 +19,16 @@ VOLUME /var/jenkins_home
 # or config file with your custom jenkins Docker image.
 RUN mkdir -p /usr/share/jenkins/ref/init.groovy.d
 
-ENV TINI_SHA 066ad710107dc7ee05d3aa6e4974f01dc98f3888
+ENV TINI_SHA fa23d1e20732501c3bb8eeeca423c89ac80ed452
 
 # Use tini as subreaper in Docker container to adopt zombie processes 
-RUN curl -fL https://github.com/krallin/tini/releases/download/v0.5.0/tini-static -o /bin/tini && chmod +x /bin/tini \
+RUN curl -fL https://github.com/krallin/tini/releases/download/v0.9.0/tini-static -o /bin/tini && chmod +x /bin/tini \
   && echo "$TINI_SHA /bin/tini" | sha1sum -c -
 
 COPY init.groovy /usr/share/jenkins/ref/init.groovy.d/tcp-slave-agent-port.groovy
 
-ENV JENKINS_VERSION 1.642.1
-ENV JENKINS_SHA 6a0213256670a00610a3e09203850a0fcf1a688e
+ENV JENKINS_VERSION 1.651.1
+ENV JENKINS_SHA 31fcae60edba2ecb6c380c59f374761723981283
 
 # could use ADD but this one does not check Last-Modified header 
 # see https://github.com/docker/docker/issues/8331
